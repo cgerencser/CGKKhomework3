@@ -1,0 +1,83 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.elon.investment;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author erikborchers
+ */
+public class Investment implements Serializable{
+ 
+  public double investmentAmt;
+  public double yearlyIR;
+  public double numberOfYears;
+  public double futureValue;
+          
+  public Investment() {
+    investmentAmt = 0.0;
+    yearlyIR = 0.0;
+    numberOfYears = 0.0;
+    futureValue = 0.0;
+  }
+
+  /**
+   * @return the investmentAmt
+   */
+  public double getInvestmentAmt() {
+    return investmentAmt;
+  }
+
+  /**
+   * @param investmentAmt the investmentAmt to set
+   */
+  public void setInvestmentAmt(double investmentAmt) {
+    this.investmentAmt = investmentAmt;
+  }
+
+  /**
+   * @return the yearlyIR
+   */
+  public double getYearlyIR() {
+    return yearlyIR;
+  }
+
+  /**
+   * @param yearlyIR the yearlyIR to set
+   */
+  public void setYearlyIR(double yearlyIR) {
+    this.yearlyIR = yearlyIR;
+  }
+
+  /**
+   * @return the numberOfYears
+   */
+  public double getNumberOfYears() {
+    return numberOfYears;
+  }
+
+  /**
+   * @param numberOfYears the numberOfYears to set
+   */
+  public void setNumberOfYears(double numberOfYears) {
+    this.numberOfYears = numberOfYears;
+  }
+
+  /**
+   * @return the futureValue
+   */
+  public double getFutureValue() {
+    return futureValue;
+  }
+
+  /**
+   * @param futureValue the futureValue to set
+   */
+  public void setFutureValue(double futureValue) {
+    this.futureValue = futureValue;
+  }
+}
