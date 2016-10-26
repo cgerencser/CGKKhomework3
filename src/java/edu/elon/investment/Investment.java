@@ -13,10 +13,10 @@ import java.io.Serializable;
  */
 public class Investment implements Serializable{
  
-  public double investmentAmt;
-  public double yearlyIR;
-  public double numberOfYears;
-  public double futureValue;
+  private double investmentAmt;
+  private double yearlyIR;
+  private double numberOfYears;
+  private double futureValue;
           
   public Investment() {
     investmentAmt = 0.0;
@@ -24,7 +24,14 @@ public class Investment implements Serializable{
     numberOfYears = 0.0;
     futureValue = 0.0;
   }
-
+  
+  public Investment(double investmentAmt, double yearlyIR, double numberOfYears, double futureValue) {
+  
+  this.investmentAmt = investmentAmt;
+  this.yearlyIR = yearlyIR;
+  this.numberOfYears = numberOfYears;
+  this.futureValue = futureValue;
+}
   /**
    * @return the investmentAmt
    */

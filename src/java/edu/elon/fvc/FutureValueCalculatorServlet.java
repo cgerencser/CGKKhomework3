@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.elon.investment.Investment;
+   
 /**
  *
  * @author erikborchers
@@ -38,8 +40,14 @@ public class FutureValueCalculatorServlet extends HttpServlet {
       String investmentAmt = request.getParameter("invAmt");
       String yearlyIR = request.getParameter("yearlyIR");
       String numberOfYears = request.getParameter("nOfYears");
-
+      //set result equal to 0 to create Investment
+      double result = 0.0;
     }
+    
+    //store data in Investment object
+    Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
+    
+    
   }
 
 
