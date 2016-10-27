@@ -6,12 +6,14 @@
 package edu.elon.investment;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
  * @author erikborchers
  */
-public class Investment implements Serializable{
+public class Investment implements Serializable {
  
   private double investmentAmt;
   private double yearlyIR;
@@ -86,5 +88,18 @@ public class Investment implements Serializable{
    */
   public void setFutureValue(double futureValue) {
     this.futureValue = futureValue;
+  }
+  
+  public double calcFutureValue(){
+    double amt = this.investmentAmt;
+    double interestRate = this.yearlyIR;
+    double numYears = this.numberOfYears;
+    for (int i = 1; i <= numYears; i++) {
+      amt = amt + (amt * (interestRate/100));
+    }
+    BigDecimal bd = new BigDecimal(amt);
+    bd = bd.setScale(2, RoundingMode.HALF_UP);
+    amt = bd.doubleValue();  
+    return amt;
   }
 }

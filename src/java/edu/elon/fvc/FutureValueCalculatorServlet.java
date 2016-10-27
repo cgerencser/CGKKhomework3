@@ -37,58 +37,21 @@ public class FutureValueCalculatorServlet extends HttpServlet {
     if (action.equals("join")) {
       url = "/index.jsp";
     } else if (action.equals("calculate")) {
-      String investmentAmt = request.getParameter("invAmt");
-      String yearlyIR = request.getParameter("yearlyIR");
-      String numberOfYears = request.getParameter("nOfYears");
+      double investmentAmt = Double.parseDouble(request.getParameter("invAmt"));
+      double yearlyIR = Double.parseDouble(request.getParameter("yearlyIR"));
+      double numberOfYears = Double.parseDouble(request.getParameter("nOfYears"));
       //set result equal to 0 to create Investment
       double result = 0.0;
+      //store data in Investment object
+      Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
+      //store investment oject in request
+      request.setAttribute("investment",investment);
+      //forward request to jsp
+      url = "/results.jsp";
+      getServletContext()
+              .getRequestDispatcher(url)
+              .forward(request, response);
+    
     }
-    
-    //store data in Investment object
-    Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
-    
-    
   }
-
-
-
-  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-  /**
-   * Handles the HTTP <code>GET</code> method.
-   *
-   * @param request servlet request
-   * @param response servlet response
-   * @throws ServletException if a servlet-specific error occurs
-   * @throws IOException if an I/O error occurs
-   */
-  @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response)
-          throws ServletException, IOException {
-    processRequest(request, response);
-  }
-
-  /**
-   * Handles the HTTP <code>POST</code> method.
-   *
-   * @param request servlet request
-   * @param response servlet response
-   * @throws ServletException if a servlet-specific error occurs
-   * @throws IOException if an I/O error occurs
-   */
-  @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-          throws ServletException, IOException {
-    processRequest(request, response);
-  }
-
-  /**
-   * Returns a short description of the servlet.
-   *
-   * @return a String containing servlet description
-   */
-  @Override
-  public String getServletInfo() {
-    return "Short description";
-  }// </editor-fold>
-
 }

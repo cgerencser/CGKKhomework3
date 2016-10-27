@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <form action="valueCalc" method="post">
+    <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
       <label>Investment Amount</label>
-      <input type="text" name="invAmt"><br>
+      <input type="text" name="invAmt" required><br>
       <label>Yearly Interest Rate</label>
-      <input type="text" name="yearlyIR"><br>
+      <input type="text" name="yearlyIR" required><br>
       <label >Number of Years</label>
-      <input type="text" name="nOfYears"br>        
-      <label>&nbsp;</label>
-      <input type="text" value="Calculate">   
+      <input type="text" name="nOfYears" required>        
+      <br>
+      <input type="submit" value="calculate">   
     </form>
   </body>
 </html>
