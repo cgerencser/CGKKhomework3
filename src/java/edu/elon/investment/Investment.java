@@ -90,7 +90,7 @@ public class Investment implements Serializable {
     this.futureValue = futureValue;
   }
   
-  public double calcFutureValue(){
+  public double getcalcFutureValue(){
     double amt = this.investmentAmt;
     double interestRate = this.yearlyIR;
     double numYears = this.numberOfYears;

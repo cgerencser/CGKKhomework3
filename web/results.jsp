@@ -22,9 +22,10 @@
       <br>
       <label>Number of Years: </label>
       <span><jsp:getProperty name="investment" property="numberOfYears"/></span>
-      <br>
+      <br>     
       <label>Future Value: </label>
       <span><jsp:getProperty name="investment" property="calcFutureValue"/></span>
+      
   </body>
 </html>
 <c:import url="/includes/footer.jsp" />
