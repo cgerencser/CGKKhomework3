@@ -14,7 +14,6 @@
   <header>
       <c:import url="/includes/header.html" />
   </header>
-  <body>
     <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
       <label>Investment Amount</label>
@@ -26,9 +25,7 @@
       <br>
       <input type="submit" value="calculate">   
     </form>
-  </body>
-  <footer>
+
       <c:import url="/includes/footer.jsp" />
-  </footer>
 </html>
 

@@ -6,8 +6,8 @@
 <c:import url="/includes/header.html" />
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Results</title>
   </head>
   <body>
@@ -23,7 +23,7 @@
       <br>     
       <label>Future Value: </label>
       <span>$<jsp:getProperty name="investment" property="calcFutureValue"/></span>
-      
+      </html>
   </body>
-</html>
 <c:import url="/includes/footer.jsp" />
+
