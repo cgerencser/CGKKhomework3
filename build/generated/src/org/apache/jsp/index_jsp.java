@@ -54,16 +54,22 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("\n");
       out.write("\n");
-      if (_jspx_meth_c_import_0(_jspx_page_context))
-        return;
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("<html>\n");
       out.write("  <head>\n");
+      out.write("    <link href=\"styles/main.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("    <title>Future Value Calculator</title>\n");
       out.write("    <meta charset=\"UTF-8\">\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("  </head>\n");
+      out.write("  <header>\n");
+      out.write("      ");
+      if (_jspx_meth_c_import_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("  </header>\n");
       out.write("  <body>\n");
       out.write("    <form action=\"calculate\" method=\"post\">\n");
       out.write("      <input type=\"hidden\" name=\"action\" value=\"calculate\">\n");
@@ -71,16 +77,20 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      <input type=\"number\" name=\"invAmt\" required min=\"0\"><br>\n");
       out.write("      <label>Yearly Interest Rate</label>\n");
       out.write("      <input type=\"number\" name=\"yearlyIR\" required min=\"0\"><br>\n");
-      out.write("      <label >Number of Years</label>\n");
+      out.write("      <label id=\"year\">Number of Years</label>\n");
       out.write("      <input type=\"number\" name=\"nOfYears\" required min=\"0\">        \n");
       out.write("      <br>\n");
       out.write("      <input type=\"submit\" value=\"calculate\">   \n");
       out.write("    </form>\n");
       out.write("  </body>\n");
-      out.write("</html>\n");
-      out.write("\n");
+      out.write("  <footer>\n");
+      out.write("      ");
       if (_jspx_meth_c_import_1(_jspx_page_context))
         return;
+      out.write("\n");
+      out.write("  </footer>\n");
+      out.write("</html>\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -1,25 +1,52 @@
 /*Copyright Erik Borchers and Chirs Gerenscer*/
-
+@media screen and (min-width: 400px) {
+    body{
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 2em;
+        margin-top: 0px;
+    }
+    form{
+        text-align: center;
+        margin: 1em;
+    }
+    label{
+        text-align: right;
+        display: inline-block;
+    }
+    input{
+        width: 18em;
+        text-align: left;
+        display: inline-block;
+    }
+    input[type="submit"]{
+        width: 10em;
+        margin-left: 6em;
+    }
+    #year{
+    padding-left: 1.4em;
+    }
+}
+@media screen and (max-width: 400px) {
+    form{
+        text-align: left;
+    }
+    input{
+        text-align: left;
+        width: 18em;
+    }
+}
 body{
     border: 1px solid blue;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0px;
-    max-width: 450px;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 2em;
+    max-width: 430px;
 }
-form{
-    margin: 1em;
+
+
+footer{
+    border-top: 1px solid blue;
 }
-label{
-    text-align: right;
-}
-input{
-    width: 10em;
-    text-align: left;
-}
-input[type="submit"]{
-    width: 6em;
+header{
+    color: blue;
 }

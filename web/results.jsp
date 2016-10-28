@@ -7,6 +7,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="styles/main.css" rel="stylesheet" type="text/css"/>
     <title>Results</title>
   </head>
   <body>
