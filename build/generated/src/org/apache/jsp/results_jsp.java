@@ -65,34 +65,35 @@ public final class results_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  </head>\n");
       out.write("  <body>\n");
       out.write("      ");
-      edu.elon.investment.Investment Investment = null;
+      edu.elon.investment.Investment investment = null;
       synchronized (request) {
-        Investment = (edu.elon.investment.Investment) _jspx_page_context.getAttribute("Investment", PageContext.REQUEST_SCOPE);
-        if (Investment == null){
-          Investment = new edu.elon.investment.Investment();
-          _jspx_page_context.setAttribute("Investment", Investment, PageContext.REQUEST_SCOPE);
+        investment = (edu.elon.investment.Investment) _jspx_page_context.getAttribute("investment", PageContext.REQUEST_SCOPE);
+        if (investment == null){
+          investment = new edu.elon.investment.Investment();
+          _jspx_page_context.setAttribute("investment", investment, PageContext.REQUEST_SCOPE);
         }
       }
       out.write("\n");
       out.write("      <label>Investment Amount:</label>\n");
-      out.write("      <span>");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("Investment")).getInvestmentAmt())));
-      out.write("</span>\n");
+      out.write("      <span>$");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("investment")).getInvestmentAmt())));
+      out.write("0</span>\n");
       out.write("      <br>\n");
       out.write("      <label>Yearly Interest Rate: </label>\n");
       out.write("      <span>");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("Investment")).getYearlyIR())));
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("investment")).getYearlyIR())));
       out.write("</span>\n");
       out.write("      <br>\n");
       out.write("      <label>Number of Years: </label>\n");
       out.write("      <span>");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("Investment")).getNumberOfYears())));
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("investment")).getNumberOfYears())));
       out.write("</span>\n");
-      out.write("      <br>\n");
+      out.write("      <br>     \n");
       out.write("      <label>Future Value: </label>\n");
-      out.write("      <span>");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString(org.apache.jasper.runtime.JspRuntimeLibrary.handleGetProperty(_jspx_page_context.findAttribute("FutureValue"), "calcFutureValue")));
+      out.write("      <span>$");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((edu.elon.investment.Investment)_jspx_page_context.findAttribute("investment")).getcalcFutureValue())));
       out.write("</span>\n");
+      out.write("      \n");
       out.write("  </body>\n");
       out.write("</html>\n");
       if (_jspx_meth_c_import_1(_jspx_page_context))

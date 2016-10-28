@@ -15,7 +15,7 @@
   <body>
       <jsp:useBean id="investment" scope="request" class="edu.elon.investment.Investment"/>
       <label>Investment Amount:</label>
-      <span><jsp:getProperty name="investment" property="investmentAmt"/></span>
+      <span>$<jsp:getProperty name="investment" property="investmentAmt"/>0</span>
       <br>
       <label>Yearly Interest Rate: </label>
       <span><jsp:getProperty name="investment" property="yearlyIR"/></span>
@@ -24,7 +24,7 @@
       <span><jsp:getProperty name="investment" property="numberOfYears"/></span>
       <br>     
       <label>Future Value: </label>
-      <span><jsp:getProperty name="investment" property="calcFutureValue"/></span>
+      <span>$<jsp:getProperty name="investment" property="calcFutureValue"/></span>
       
   </body>
 </html>

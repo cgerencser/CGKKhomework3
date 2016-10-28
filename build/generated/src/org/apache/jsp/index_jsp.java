@@ -68,11 +68,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <form action=\"calculate\" method=\"post\">\n");
       out.write("      <input type=\"hidden\" name=\"action\" value=\"calculate\">\n");
       out.write("      <label>Investment Amount</label>\n");
-      out.write("      <input type=\"text\" name=\"invAmt\" required><br>\n");
+      out.write("      <input type=\"number\" name=\"invAmt\" required min=\"0\"><br>\n");
       out.write("      <label>Yearly Interest Rate</label>\n");
-      out.write("      <input type=\"text\" name=\"yearlyIR\" required><br>\n");
+      out.write("      <input type=\"number\" name=\"yearlyIR\" required min=\"0\"><br>\n");
       out.write("      <label >Number of Years</label>\n");
-      out.write("      <input type=\"text\" name=\"nOfYears\" required>        \n");
+      out.write("      <input type=\"number\" name=\"nOfYears\" required min=\"0\">        \n");
       out.write("      <br>\n");
       out.write("      <input type=\"submit\" value=\"calculate\">   \n");
       out.write("    </form>\n");

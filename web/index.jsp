@@ -13,11 +13,11 @@
     <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
       <label>Investment Amount</label>
-      <input type="text" name="invAmt" required><br>
+      <input type="number" name="invAmt" required min="0"><br>
       <label>Yearly Interest Rate</label>
-      <input type="text" name="yearlyIR" required><br>
+      <input type="number" name="yearlyIR" required min="0"><br>
       <label >Number of Years</label>
-      <input type="text" name="nOfYears" required>        
+      <input type="number" name="nOfYears" required min="0">        
       <br>
       <input type="submit" value="calculate">   
     </form>

@@ -48,8 +48,8 @@ public class FutureValueCalculatorServlet extends HttpServlet {
               (Pattern.matches(doublePattern, yrIR)) == false || 
               (Pattern.matches(doublePattern, nOfYears)) == false) {
         message = "Please properly supply the information";
-        System.out.println("dingdong");
         url = "/index.jsp";
+        
       } else {
       double investmentAmt = Double.parseDouble(ivtAmt);
       double yearlyIR = Double.parseDouble(yrIR);
