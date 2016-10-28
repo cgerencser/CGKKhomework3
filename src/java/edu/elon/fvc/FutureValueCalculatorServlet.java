@@ -13,45 +13,62 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.elon.investment.Investment;
-   
+import java.util.regex.Pattern;
+
 /**
  *
  * @author erikborchers
  */
 public class FutureValueCalculatorServlet extends HttpServlet {
-  
+
   @Override
   protected void doPost(HttpServletRequest request,
-            HttpServletResponse response)
-            throws ServletException, IOException {
-    
+          HttpServletResponse response)
+          throws ServletException, IOException {
+
     String url = "/index.jsp";
-    
+
     //get current action
     String action = request.getParameter("action");
     if (action == null) {
       action = "join";
     }
-    
+
     //perform action
     if (action.equals("join")) {
       url = "/index.jsp";
     } else if (action.equals("calculate")) {
-      double investmentAmt = Double.parseDouble(request.getParameter("invAmt"));
-      double yearlyIR = Double.parseDouble(request.getParameter("yearlyIR"));
-      double numberOfYears = Double.parseDouble(request.getParameter("nOfYears"));
+      String ivtAmt = request.getParameter("invAmt");
+      String yrIR = request.getParameter("yearlyIR");
+      String nOfYears = request.getParameter("nOfYears");
+      // validate the parameters
+      String doublePattern = ("[0-9]+(\\.){0,1}[0-9]*");
+      String message;
+      if ((Pattern.matches(doublePattern, ivtAmt)) == false ||
+              (Pattern.matches(doublePattern, yrIR)) == false || 
+              (Pattern.matches(doublePattern, nOfYears)) == false) {
+        message = "Please properly supply the information";
+        System.out.println("dingdong");
+        url = "/index.jsp";
+      } else {
+      double investmentAmt = Double.parseDouble(ivtAmt);
+      double yearlyIR = Double.parseDouble(yrIR);
+      double numberOfYears = Double.parseDouble(nOfYears);
       //set result equal to 0 to create Investment
       double result = 0.0;
       //store data in Investment object
       Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
       //store investment oject in request
-      request.setAttribute("investment",investment);
+      request.setAttribute("investment", investment);
       //forward request to jsp
       url = "/results.jsp";
       getServletContext()
               .getRequestDispatcher(url)
               .forward(request, response);
-    
+      }
+
+      
+
     }
   }
 }
