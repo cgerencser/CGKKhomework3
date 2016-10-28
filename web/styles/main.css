@@ -1,0 +1,25 @@
+/*Copyright Erik Borchers and Chirs Gerenscer*/
+
+body{
+    border: 1px solid blue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    max-width: 450px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2em;
+}
+form{
+    margin: 1em;
+}
+label{
+    text-align: right;
+}
+input{
+    width: 10em;
+    text-align: left;
+}
+input[type="submit"]{
+    width: 6em;
+}

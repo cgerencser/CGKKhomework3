@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Copyright Erik Borchers and Chirs Gerenscer*/
+
 package edu.elon.investment;
 
 import java.io.Serializable;
@@ -97,9 +94,9 @@ public class Investment implements Serializable {
     for (int i = 1; i <= numYears; i++) {
       amt = amt + (amt * (interestRate/100));
     }
-    BigDecimal bd = new BigDecimal(amt);
-    bd = bd.setScale(2, RoundingMode.HALF_UP);
-    amt = bd.doubleValue();  
+    BigDecimal answer = new BigDecimal(amt);
+    answer = answer.setScale(2, RoundingMode.HALF_UP);
+    amt = answer.doubleValue();  
     return amt;
   }
 }
