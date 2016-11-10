@@ -5,6 +5,7 @@ package edu.elon.investment;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 /**
  *
@@ -14,17 +15,18 @@ public class Investment implements Serializable {
  
   private double investmentAmt;
   private double yearlyIR;
-  private double numberOfYears;
+  private int numberOfYears;
   private double futureValue;
+  private double[] allVals;
           
   public Investment() {
     investmentAmt = 0.0;
     yearlyIR = 0.0;
-    numberOfYears = 0.0;
+    numberOfYears = 0;
     futureValue = 0.0;
   }
   
-  public Investment(double investmentAmt, double yearlyIR, double numberOfYears, double futureValue) {
+  public Investment(double investmentAmt, double yearlyIR, int numberOfYears, double futureValue) {
   
   this.investmentAmt = investmentAmt;
   this.yearlyIR = yearlyIR;
@@ -35,7 +37,8 @@ public class Investment implements Serializable {
    * @return the investmentAmt
    */
   public double getInvestmentAmt() {
-    return investmentAmt;
+      return investmentAmt;
+    
   }
 
   /**
@@ -69,7 +72,7 @@ public class Investment implements Serializable {
   /**
    * @param numberOfYears the numberOfYears to set
    */
-  public void setNumberOfYears(double numberOfYears) {
+  public void setNumberOfYears(int numberOfYears) {
     this.numberOfYears = numberOfYears;
   }
 
@@ -87,16 +90,19 @@ public class Investment implements Serializable {
     this.futureValue = futureValue;
   }
   
-  public double getcalcFutureValue(){
+  public String getcalcFutureValue(){
     double amt = this.investmentAmt;
     double interestRate = this.yearlyIR;
-    double numYears = this.numberOfYears;
+    int numYears = this.numberOfYears;
+    allVals = new double[numYears];
     for (int i = 1; i <= numYears; i++) {
       amt = amt + (amt * (interestRate/100));
+      allVals[i-1] = amt;
     }
     BigDecimal answer = new BigDecimal(amt);
     answer = answer.setScale(2, RoundingMode.HALF_UP);
-    amt = answer.doubleValue();  
-    return amt;
+    NumberFormat f = NumberFormat.getCurrencyInstance();
+    return f.format(amt);
+    
   }
 }

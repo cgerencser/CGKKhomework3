@@ -50,7 +50,7 @@ public class FutureValueCalculatorServlet extends HttpServlet {
       } else {
       double investmentAmt = Double.parseDouble(ivtAmt);
       double yearlyIR = Double.parseDouble(yrIR);
-      double numberOfYears = Double.parseDouble(nOfYears);
+      int numberOfYears = Integer.parseInt(nOfYears);
       //set result equal to 0 to create Investment
       double result = 0.0;
       //store data in Investment object

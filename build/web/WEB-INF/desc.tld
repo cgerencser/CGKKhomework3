@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>desc</short-name>
+  <uri>/WEB-INF/tlds/desc</uri>
+  <tag>
+      <name>currencyFormat</name>
+      <tagclass>edu.elon.tags.currencyFormat</tagclass>
+      <info>Formats the currency</info>
+      <attribute>
+          <name>field</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>double</type>
+      </attribute>
+  </tag>
+  <tag>
+      <name>listTag</name>
+      <tagclass>edu.elon.tags.listTag</tagclass>
+      <info>Makes the array of values into the final string value</info>
+  </tag>
+</taglib>

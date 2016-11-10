@@ -50,3 +50,50 @@ footer{
 header{
     color: blue;
 }
+
+
+
+
+
+
+/*Copyright Robert Feather, Kevin Kowalsky*/
+
+/*body{
+    
+font-family: PT Sans Pro,sans-serif 
+ 
+ }
+ h1{
+    color: blue;
+    font-size:200%;
+    margin-top: 0px;
+    text-align: center;
+    
+     
+ }
+ body{
+    border-color: blue;
+    border-style: solid;
+    height: 200px;
+ }
+
+ footer{
+    border-top: solid;
+    border-color: blue;
+ }
+ input{
+    display: inline-block;
+ }
+ .center{
+    text-align: center;
+ }
+ @Media(max-width: 400px){
+    input{
+      display: block;
+    }
+    body{
+      height: 300px;
+ }
+    }
+    
+    */
