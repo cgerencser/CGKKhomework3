@@ -5,13 +5,10 @@
 
 
 <c:import url="/includes/header.html" />
-
-    <title>Future Value Calculator</title>
-    
+  <title>Future Value Calculator</title>  
   </head>
   <body>
-      <h1>Future Value Calculator</h1>
-      
+    <h1>Future Value Calculator</h1>    
     <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
       <label>Investment Amount</label>
@@ -24,6 +21,6 @@
       <input type="submit" value="calculate">   
     </form>
 
-      <c:import url="/includes/footer.jsp" />
+    <c:import url="/includes/footer.jsp" />
 
 

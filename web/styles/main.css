@@ -1,58 +1,63 @@
 /*Copyright Erik Borchers and Chirs Gerenscer*/
 table{
-    counter-reset: rowNumbers;
+  counter-reset: rowNumbers;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table tr:not(:first-child){
-    counter-increment: rowNumbers;
+  counter-increment: rowNumbers;
 }
 
 table tr td:first-child:before{
-    content: counter(rowNumbers);
-    min-width: 1em;
-    margin-right: .5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  content: counter(rowNumbers);
+  min-width: 1em;
+  margin-right: .5em;
 }
 
+label{
+  text-align: right;
+}
 td{
-    margin-left: 2em;
+  margin-left: 2em;
 }
 form{
-    text-align: center;
+  text-align: center;
 }
-body{
-    
-font-family: PT Sans Pro,sans-serif 
- 
+body{  
+  font-family: PT Sans Pro,sans-serif 
  }
+ 
  h1{
-    color: blue;
-    font-size:200%;
-    margin-top: 0px;
-    text-align: center; 
+  color: blue;
+  font-size:200%;
+  margin-top: 0px;
+  text-align: center; 
  }
  
  body{
-    border-color: blue;
-    border-style: solid;
+  border-color: blue;
+  border-style: solid;
  }
 
  footer{
-    border-top: solid;
-    border-color: blue;
+  border-top: solid;
+  border-color: blue;
  }
+ 
  input{
-    display: inline-block;
+  display: inline-block;
  }
- .center{
-    text-align: center;
- }
- @Media(max-width: 400px){
-    input{
-      display: block;
-    }
-    form{
-      text-align: left;
- }
-    }
+ 
+@Media(max-width: 400px){
+  input{
+    display: block;
+  }
+  form{
+    text-align: left;   
+  }
+}
     
     

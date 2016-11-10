@@ -37,7 +37,7 @@ public class Investment implements Serializable {
    * @return the investmentAmt
    */
   public double getInvestmentAmt() {
-      return investmentAmt;
+    return investmentAmt;
     
   }
 

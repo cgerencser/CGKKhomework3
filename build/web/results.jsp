@@ -7,34 +7,33 @@
 
 <c:import url="/includes/header.html" />
 
-    <title>Results</title>
+  <title>Results</title>
   </head>
   <body>
-      <h1>Future Value Calculator</h1>
-      
-      <jsp:useBean id="investment" scope="request" class="edu.elon.investment.Investment"/>
-      <label>Investment Amount:</label>
-      <span><elon:currencyFormat field="${investment.investmentAmt}" /></span>
-      <br>
-      <label>Yearly Interest Rate: </label>
-      <span>${investment.yearlyIR}</span>
-      <br>
-      <label>Number of Years: </label>
-      <span>${investment.numberOfYears}</span>
-      <br>     
-        <table>
-            <tr>
-                <th><strong>Year</strong></th>
-                <th><strong>Value</strong></th>
-            </tr>
-            <c:forEach var="things" items="${investment.allVals}">
-                <tr>
-                    <td><elon:currencyFormat field="${things}" /> </td>
-                </tr>
-            </c:forEach>
-        </table>
-      <br>
-      <a href="calculate">Return to Calculator</a>
-
+    <h1>Future Value Calculator</h1>    
+    <jsp:useBean id="investment" scope="request" class="edu.elon.investment.Investment"/>
+    <label>Investment Amount:</label>
+    <span><elon:currencyFormat field="${investment.investmentAmt}" /></span>
+    <br>
+    <label>Yearly Interest Rate: </label>
+    <span>${investment.yearlyIR}</span>
+    <br>
+    <label>Number of Years: </label>
+    <span>${investment.numberOfYears}</span>
+    <br>     
+      <table>
+        <tr>
+          <th><strong>Year</strong></th>
+          <th><strong>Value</strong></th>
+        </tr>
+        <c:forEach var="things" items="${investment.allVals}">
+        <tr>
+          <td><elon:currencyFormat field="${things}" /> </td>
+        </tr>
+        </c:forEach>
+      </table>
+    <br>
+    <a href="calculate">Return to Calculator</a>
+    <br>
 <c:import url="/includes/footer.jsp" />
 
