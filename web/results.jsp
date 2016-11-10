@@ -1,34 +1,40 @@
-<%--Copyright Erik Borchers and Chirs Gerenscer--%>
+<%--Copyright Erik Borchers and Chirs Gerenscer and Kevin Kowalsky--%>
 
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="elon" uri="/WEB-INF/desc.tld" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <c:import url="/includes/header.html" />
-<html>
-  <head>
-    <link href="styles/main.css" rel="stylesheet" type="text/css"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <title>Results</title>
   </head>
   <body>
+      <h1>Future Value Calculator</h1>
       
       <jsp:useBean id="investment" scope="request" class="edu.elon.investment.Investment"/>
       <label>Investment Amount:</label>
       <span><elon:currencyFormat field="${investment.investmentAmt}" /></span>
       <br>
       <label>Yearly Interest Rate: </label>
-      <span><jsp:getProperty name="investment" property="yearlyIR"/></span>
+      <span>${investment.yearlyIR}</span>
       <br>
       <label>Number of Years: </label>
-      <span><jsp:getProperty name="investment" property="numberOfYears"/></span>
+      <span>${investment.numberOfYears}</span>
       <br>     
-      <label>Future Value: </label>
-      <span><jsp:getProperty name="investment" property="calcFutureValue"/></span>
-      
+        <table>
+            <tr>
+                <th><strong>Year</strong></th>
+                <th><strong>Value</strong></th>
+            </tr>
+            <c:forEach var="things" items="${investment.allVals}">
+                <tr>
+                    <td><elon:currencyFormat field="${things}" /> </td>
+                </tr>
+            </c:forEach>
+        </table>
       <br>
-      <a href="index.jsp">Return to Calculator</a>
-      </html>
-  </body>
+      <a href="calculate">Return to Calculator</a>
+
 <c:import url="/includes/footer.jsp" />
 

@@ -4,16 +4,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<html>
-  <head>
-    <link href="styles/main.css" rel="stylesheet" type="text/css"/>
+<c:import url="/includes/header.html" />
+
     <title>Future Value Calculator</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
   </head>
-  <header>
-      <c:import url="/includes/header.html" />
-  </header>
+  <body>
+      <h1>Future Value Calculator</h1>
+      
     <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
       <label>Investment Amount</label>
@@ -27,5 +25,5 @@
     </form>
 
       <c:import url="/includes/footer.jsp" />
-</html>
+
 

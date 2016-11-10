@@ -1,64 +1,25 @@
 /*Copyright Erik Borchers and Chirs Gerenscer*/
-@media screen and (min-width: 400px) {
-    body{
-        padding-left: 1em;
-        padding-right: 1em;
-        padding-top: 2em;
-        margin-top: 0px;
-    }
-    form{
-        text-align: center;
-        margin: 1em;
-    }
-    label{
-        text-align: right;
-        display: inline-block;
-    }
-    input{
-        width: 18em;
-        text-align: left;
-        display: inline-block;
-    }
-    input[type="submit"]{
-        width: 10em;
-        margin-left: 6em;
-    }
-    #year{
-    padding-left: 1.4em;
-    }
+table{
+    counter-reset: rowNumbers;
 }
-@media screen and (max-width: 400px) {
-    form{
-        text-align: left;
-    }
-    input{
-        text-align: left;
-        width: 18em;
-    }
+
+table tr:not(:first-child){
+    counter-increment: rowNumbers;
+}
+
+table tr td:first-child:before{
+    content: counter(rowNumbers);
+    min-width: 1em;
+    margin-right: .5em;
+}
+
+td{
+    margin-left: 2em;
+}
+form{
+    text-align: center;
 }
 body{
-    border: 1px solid blue;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 430px;
-}
-
-
-footer{
-    border-top: 1px solid blue;
-}
-header{
-    color: blue;
-}
-
-
-
-
-
-
-/*Copyright Robert Feather, Kevin Kowalsky*/
-
-/*body{
     
 font-family: PT Sans Pro,sans-serif 
  
@@ -67,14 +28,12 @@ font-family: PT Sans Pro,sans-serif
     color: blue;
     font-size:200%;
     margin-top: 0px;
-    text-align: center;
-    
-     
+    text-align: center; 
  }
+ 
  body{
     border-color: blue;
     border-style: solid;
-    height: 200px;
  }
 
  footer{
@@ -91,9 +50,9 @@ font-family: PT Sans Pro,sans-serif
     input{
       display: block;
     }
-    body{
-      height: 300px;
+    form{
+      text-align: left;
  }
     }
     
-    */
+    

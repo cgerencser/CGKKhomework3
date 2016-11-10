@@ -19,6 +19,13 @@ import java.util.regex.Pattern;
 public class FutureValueCalculatorServlet extends HttpServlet {
 
   @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+          throws ServletException, IOException {
+   doPost(req, resp);
+}  
+    
+    
+  @Override
   protected void doPost(HttpServletRequest request,
           HttpServletResponse response)
           throws ServletException, IOException {
@@ -59,13 +66,10 @@ public class FutureValueCalculatorServlet extends HttpServlet {
       request.setAttribute("investment", investment);
       //forward request to jsp
       url = "/results.jsp";
-      getServletContext()
+      }
+    }
+    getServletContext()
               .getRequestDispatcher(url)
               .forward(request, response);
-      }
-
-      
-
-    }
   }
 }

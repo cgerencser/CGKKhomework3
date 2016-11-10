@@ -55,6 +55,12 @@ public class Investment implements Serializable {
     return yearlyIR;
   }
 
+  public double[] getAllVals(){
+    getcalcFutureValue();
+    return allVals;
+    
+  }
+  
   /**
    * @param yearlyIR the yearlyIR to set
    */
@@ -65,7 +71,7 @@ public class Investment implements Serializable {
   /**
    * @return the numberOfYears
    */
-  public double getNumberOfYears() {
+  public int getNumberOfYears() {
     return numberOfYears;
   }
 
@@ -90,7 +96,7 @@ public class Investment implements Serializable {
     this.futureValue = futureValue;
   }
   
-  public String getcalcFutureValue(){
+  public void getcalcFutureValue(){
     double amt = this.investmentAmt;
     double interestRate = this.yearlyIR;
     int numYears = this.numberOfYears;
@@ -99,10 +105,7 @@ public class Investment implements Serializable {
       amt = amt + (amt * (interestRate/100));
       allVals[i-1] = amt;
     }
-    BigDecimal answer = new BigDecimal(amt);
-    answer = answer.setScale(2, RoundingMode.HALF_UP);
-    NumberFormat f = NumberFormat.getCurrencyInstance();
-    return f.format(amt);
+   
     
   }
 }
