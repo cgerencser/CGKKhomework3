@@ -61,9 +61,11 @@ public class FutureValueCalculatorServlet extends HttpServlet {
       //set result equal to 0 to create Investment
       double result = 0.0;
       //store data in Investment object
-      Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
+      Investment investment = new Investment(investmentAmt, 
+              yearlyIR, numberOfYears, result);
       //store investment oject in request
-      Investment lastInvestment = new Investment(investmentAmt,yearlyIR,numberOfYears,0);
+      Investment lastInvestment = new Investment(investmentAmt,
+              yearlyIR,numberOfYears,0);
       HttpSession session = request.getSession();
       session.setAttribute("investment",lastInvestment);
       request.setAttribute("investment", investment);

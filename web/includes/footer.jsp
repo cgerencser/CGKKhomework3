@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <%--Copyright Erik Borchers and Chirs Gerenscer and Kevin Kowalsky--%>
 
 <%@ page import="java.util.GregorianCalendar, java.util.Calendar" %>

@@ -11,7 +11,8 @@
   </head>
   <body>
     <h1>Future Value Calculator</h1>    
-    <jsp:useBean id="investment" scope="request" class="edu.elon.investment.Investment"/>
+    <jsp:useBean id="investment" scope="request" 
+                 class="edu.elon.investment.Investment"/>
     <label>Investment Amount:</label>
     <span><elon:currencyFormat field="${investment.investmentAmt}" /></span>
     <br>

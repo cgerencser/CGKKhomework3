@@ -1,4 +1,4 @@
-/*Copyright Erik Borchers and Chirs Gerenscer*/
+/*Copyright Kevin Kowalsky and Chirs Gerenscer*/
 
 package edu.elon.investment;
 
@@ -7,10 +7,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 
-/**
- *
- * @author erikborchers
- */
 public class Investment implements Serializable {
  
   private double investmentAmt;
@@ -26,7 +22,8 @@ public class Investment implements Serializable {
     futureValue = 0.0;
   }
   
-  public Investment(double investmentAmt, double yearlyIR, int numberOfYears, double futureValue) {
+  public Investment(double investmentAmt, double yearlyIR, 
+          int numberOfYears, double futureValue) {
   
   this.investmentAmt = investmentAmt;
   this.yearlyIR = yearlyIR;
