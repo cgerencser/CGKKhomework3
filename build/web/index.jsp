@@ -13,17 +13,17 @@
       <input type="hidden" name="action" value="calculate">
       <table id="index">
         <tr>
-          <td><label>Investment Amount:</label></td>
-          <td><input type="number" name="invAmt" required min="0"></td>
+          <td><label for="invAmt">Investment Amount:</label></td>
+          <td><input type="number" name="invAmt" value="${investment.investmentAmt}" id="invAmt" required min="0"></td>
         </tr>
         <tr>
           <td><label>Yearly Interest Rate:</label></td>
-          <td><input type="number" name="yearlyIR" required min="0"></td>
+          <td><input type="number" name="yearlyIR" value="${investment.yearlyIR}" required min="0"></td>
         </tr>
         <tr>
           <td><label id="year">Number of Years:</label></td>
           <td><input placeholder="Integer number of years" type="number" 
-                     name="nOfYears" required min="0"></td>
+                     name="nOfYears" value="${investment.numberOfYears}" required min="0"></td>
         </tr>
       </table>  
       <input id="button" type="submit" value="calculate">   

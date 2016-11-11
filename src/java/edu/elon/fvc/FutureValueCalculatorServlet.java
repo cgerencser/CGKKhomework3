@@ -3,7 +3,6 @@
 package edu.elon.fvc;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.elon.investment.Investment;
 import java.util.regex.Pattern;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -63,6 +63,9 @@ public class FutureValueCalculatorServlet extends HttpServlet {
       //store data in Investment object
       Investment investment = new Investment(investmentAmt, yearlyIR, numberOfYears, result);
       //store investment oject in request
+      Investment lastInvestment = new Investment(investmentAmt,yearlyIR,numberOfYears,0);
+      HttpSession session = request.getSession();
+      session.setAttribute("investment",lastInvestment);
       request.setAttribute("investment", investment);
       //forward request to jsp
       url = "/results.jsp";
