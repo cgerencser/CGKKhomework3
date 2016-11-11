@@ -1,15 +1,15 @@
 /*Copyright Erik Borchers and Chirs Gerenscer*/
-table{
+#result{
   counter-reset: rowNumbers;
   margin-left: auto;
   margin-right: auto;
 }
 
-table tr:not(:first-child){
+#result tr:not(:first-child){
   counter-increment: rowNumbers;
 }
 
-table tr td:first-child:before{
+#result tr td:first-child:before{
   padding-left: 5em;
   padding-right: 5em;
   content: counter(rowNumbers);
@@ -17,6 +17,11 @@ table tr td:first-child:before{
   margin-right: .5em;
 }
 
+#index{
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+}
 label{
   text-align: right;
 }
@@ -45,18 +50,38 @@ body{
  footer{
   border-top: solid;
   border-color: blue;
+  margin-left: auto;
+  margin-right: auto;
  }
  
  input{
   display: inline-block;
  }
  
+ input:not(#button){
+   width: 20em;
+ }
+ 
+ #button{
+
+ }
+ 
 @Media(max-width: 400px){
-  input{
-    display: block;
-  }
+
   form{
     text-align: left;   
+  }
+  
+  #index{
+    margin: 1.5em 10%;
+  }
+  
+  #index tr{
+    flex-direction: column;
+  }
+  
+  #index td{
+    width: 100%;
   }
 }
     

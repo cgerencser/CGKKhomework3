@@ -21,7 +21,7 @@
     <label>Number of Years: </label>
     <span>${investment.numberOfYears}</span>
     <br>     
-      <table>
+      <table id="result">
         <tr>
           <th><strong>Year</strong></th>
           <th><strong>Value</strong></th>

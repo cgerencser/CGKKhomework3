@@ -11,14 +11,23 @@
     <h1>Future Value Calculator</h1>    
     <form action="calculate" method="post">
       <input type="hidden" name="action" value="calculate">
-      <label>Investment Amount</label>
-      <input type="number" name="invAmt" required min="0"><br>
-      <label>Yearly Interest Rate</label>
-      <input type="number" name="yearlyIR" required min="0"><br>
-      <label id="year">Number of Years</label>
-      <input type="number" name="nOfYears" required min="0">        
+      <table id="index">
+        <tr>
+          <td><label>Investment Amount:</label></td>
+          <td><input type="number" name="invAmt" required min="0"></td>
+        </tr>
+        <tr>
+          <td><label>Yearly Interest Rate:</label></td>
+          <td><input type="number" name="yearlyIR" required min="0"></td>
+        </tr>
+        <tr>
+          <td><label id="year">Number of Years:</label></td>
+          <td><input placeholder="Integer number of years" type="number" 
+                     name="nOfYears" required min="0"></td>
+        </tr>
+      </table>  
+      <input id="button" type="submit" value="calculate">   
       <br>
-      <input type="submit" value="calculate">   
     </form>
 
     <c:import url="/includes/footer.jsp" />
